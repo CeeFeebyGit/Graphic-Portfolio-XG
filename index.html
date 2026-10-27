@@ -22,11 +22,11 @@
             z-index: 1;
         }
 
-        /* Your exact uploaded file: centered and locked with zero drift */
+        /* 2x larger (240px), centered, zero drift */
         .ring {
             position: absolute;
-            width: 120px;
-            height: 120px;
+            width: 240px;
+            height: 240px;
             background-image: url('Yellow_Dotted-removebg.png');
             background-size: contain;
             background-repeat: no-repeat;
@@ -36,12 +36,16 @@
             will-change: transform;
         }
 
-        /* Fast, stationary in-place spin speeds */
-        .ring-1 { top: 15%; left: 10%; animation: spinCW 2.5s linear infinite; }
-        .ring-2 { top: 70%; left: 15%; animation: spinCCW 2.2s linear infinite; }
-        .ring-3 { top: 20%; left: 75%; animation: spinCW 2.8s linear infinite; }
-        .ring-4 { top: 75%; left: 80%; animation: spinCCW 2.4s linear infinite; }
-        .ring-5 { top: 45%; left: 48%; animation: spinCW 3s linear infinite; }
+        /* Left-side rings (normal rotation) */
+        .ring-1 { top: 10%; left: 5%; animation: spinCW 2.5s linear infinite; }
+        .ring-2 { top: 65%; left: 8%; animation: spinCCW 2.2s linear infinite; }
+
+        /* Right-side rings (mirrored on X-axis to face inward) */
+        .ring-3 { top: 15%; left: 70%; animation: spinCW-mirrored 2.8s linear infinite; }
+        .ring-4 { top: 70%; left: 75%; animation: spinCCW-mirrored 2.4s linear infinite; }
+        
+        /* Center ring */
+        .ring-5 { top: 38%; left: 42%; animation: spinCW 3s linear infinite; }
 
         @keyframes spinCW {
             from { transform: rotate(0deg); }
@@ -51,6 +55,16 @@
         @keyframes spinCCW {
             from { transform: rotate(0deg); }
             to { transform: rotate(-360deg); }
+        }
+
+        @keyframes spinCW-mirrored {
+            from { transform: scaleX(-1) rotate(0deg); }
+            to { transform: scaleX(-1) rotate(360deg); }
+        }
+
+        @keyframes spinCCW-mirrored {
+            from { transform: scaleX(-1) rotate(0deg); }
+            to { transform: scaleX(-1) rotate(-360deg); }
         }
 
         /* Subtle grey shapes */
@@ -84,7 +98,7 @@
 <body>
 
     <div class="bg-layer">
-        <!-- Your exact uploaded file instances -->
+        <!-- 2x Large rings with right-side mirroring -->
         <div class="ring ring-1"></div>
         <div class="ring ring-2"></div>
         <div class="ring ring-3"></div>
