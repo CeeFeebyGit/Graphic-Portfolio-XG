@@ -22,11 +22,11 @@
             z-index: 1;
         }
 
-        /* Increased by 0.5% (241.2px), centered, zero drift */
+        /* 2x bigger (482.4px), centered, zero drift */
         .ring {
             position: absolute;
-            width: 241.2px;
-            height: 241.2px;
+            width: 482.4px;
+            height: 482.4px;
             background-image: url('Yellow_Dotted-removebg.png');
             background-size: contain;
             background-repeat: no-repeat;
@@ -37,15 +37,15 @@
         }
 
         /* Left-side rings (normal rotation) */
-        .ring-1 { top: 10%; left: 5%; animation: spinCW 2.5s linear infinite; }
-        .ring-2 { top: 65%; left: 8%; animation: spinCCW 2.2s linear infinite; }
+        .ring-1 { top: -5%; left: -5%; animation: spinCW 2.5s linear infinite; }
+        .ring-2 { top: 50%; left: -8%; animation: spinCCW 2.2s linear infinite; }
 
         /* Right-side rings (mirrored on X-axis to face inward) */
-        .ring-3 { top: 15%; left: 70%; animation: spinCW-mirrored 2.8s linear infinite; }
-        .ring-4 { top: 70%; left: 75%; animation: spinCCW-mirrored 2.4s linear infinite; }
+        .ring-3 { top: -5%; left: 55%; animation: spinCW-mirrored 2.8s linear infinite; }
+        .ring-4 { top: 50%; left: 58%; animation: spinCCW-mirrored 2.4s linear infinite; }
         
         /* Center ring */
-        .ring-5 { top: 38%; left: 42%; animation: spinCW 3s linear infinite; }
+        .ring-5 { top: 25%; left: 28%; animation: spinCW 3s linear infinite; }
 
         @keyframes spinCW {
             from { transform: rotate(0deg); }
@@ -98,7 +98,7 @@
 <body>
 
     <div class="bg-layer">
-        <!-- 241.2px rings with right-side mirroring -->
+        <!-- 482.4px rings with right-side mirroring -->
         <div class="ring ring-1"></div>
         <div class="ring ring-2"></div>
         <div class="ring ring-3"></div>
