@@ -22,20 +22,22 @@
             z-index: 1;
         }
 
-        /* Locked in place, spinning fast on their center axis */
+        /* Perfectly centered, zero-drift rotating rings */
         .ring {
             position: absolute;
             width: 120px;
             height: 120px;
-            background-image: url('Yellow_Dotted-removebg.png');
-            background-size: contain;
-            background-repeat: no-repeat;
-            opacity: 0.8;
-            transform-origin: 50% 50%;
+            transform-origin: center center;
             will-change: transform;
+            opacity: 0.85;
         }
 
-        /* Much faster spin speeds (lower seconds = faster) */
+        .ring svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Fast, locked-in-place spin speeds */
         .ring-1 { top: 15%; left: 10%; animation: spinCW 3s linear infinite; }
         .ring-2 { top: 70%; left: 15%; animation: spinCCW 2.5s linear infinite; }
         .ring-3 { top: 20%; left: 75%; animation: spinCW 3.5s linear infinite; }
@@ -43,13 +45,13 @@
         .ring-5 { top: 45%; left: 48%; animation: spinCW 4s linear infinite; }
 
         @keyframes spinCW {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
         }
 
         @keyframes spinCCW {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(-360deg); }
+            from { transform: rotate(0deg); }
+            to { transform: rotate(-360deg); }
         }
 
         /* Subtle grey shapes */
@@ -83,12 +85,24 @@
 <body>
 
     <div class="bg-layer">
-        <div class="ring ring-1"></div>
-        <div class="ring ring-2"></div>
-        <div class="ring ring-3"></div>
-        <div class="ring ring-4"></div>
-        <div class="ring ring-5"></div>
+        <!-- Stationarily spinning dotted rings -->
+        <div class="ring ring-1">
+            <svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="38" fill="none" stroke="#e6c619" stroke-width="14" stroke-dasharray="6 12" /></svg>
+        </div>
+        <div class="ring ring-2">
+            <svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="38" fill="none" stroke="#e6c619" stroke-width="14" stroke-dasharray="6 12" /></svg>
+        </div>
+        <div class="ring ring-3">
+            <svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="38" fill="none" stroke="#e6c619" stroke-width="14" stroke-dasharray="6 12" /></svg>
+        </div>
+        <div class="ring ring-4">
+            <svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="38" fill="none" stroke="#e6c619" stroke-width="14" stroke-dasharray="6 12" /></svg>
+        </div>
+        <div class="ring ring-5">
+            <svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="38" fill="none" stroke="#e6c619" stroke-width="14" stroke-dasharray="6 12" /></svg>
+        </div>
 
+        <!-- Geometric shapes -->
         <div class="shape square s1"></div>
         <div class="shape circle s2"></div>
         <div class="triangle s3"></div>
