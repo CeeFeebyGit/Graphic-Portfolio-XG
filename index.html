@@ -1,82 +1,16 @@
-HTML
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Graphic Portfolio XG</title>
+    <title>Portfolio</title>
     <style>
         body {
+            background-color: #808080;
             margin: 0;
             height: 100vh;
-            background-color: #2b2b2b; /* Clean grey background */
-            overflow: hidden;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: #ffffff;
-            font-family: sans-serif;
-        }
-
-        /* Background container for the rings */
-        .bg-rings {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: 1;
-        }
-
-        .ring {
-            position: absolute;
-            width: 130px;
-            height: 130px;
-            background-image: url('Yellow_Dotted-removebg.png');
-            background-size: contain;
-            background-repeat: no-repeat;
-            opacity: 0.7;
-            will-change: transform;
-        }
-
-        /* Random placement and spinning directions */
-        .ring:nth-child(1) { top: 15%; left: 12%; animation: spinCW 14s linear infinite; }
-        .ring:nth-child(2) { top: 70%; left: 18%; animation: spinCCW 19s linear infinite; }
-        .ring:nth-child(3) { top: 25%; left: 78%; animation: spinCW 16s linear infinite; }
-        .ring:nth-child(4) { top: 75%; left: 82%; animation: spinCCW 11s linear infinite; }
-        .ring:nth-child(5) { top: 45%; left: 48%; animation: spinCW 22s linear infinite; }
-
-        @keyframes spinCW {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
-
-        @keyframes spinCCW {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(-360deg); }
-        }
-
-        .content {
-            position: relative;
-            z-index: 2;
-            text-align: center;
         }
     </style>
 </head>
 <body>
-
-    <div class="bg-rings">
-        <div class="ring"></div>
-        <div class="ring"></div>
-        <div class="ring"></div>
-        <div class="ring"></div>
-        <div class="ring"></div>
-    </div>
-
-    <div class="content">
-        <h1>Graphic-Portfolio-XG</h1>
-    </div>
-
 </body>
 </html>
