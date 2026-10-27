@@ -43,17 +43,24 @@
             background-position: center center;
         }
 
-        /* Centered underneath without any positional offset */
+        /* Solid deep blue inner layer using CSS masking */
         .shadow-layer {
-            background-image: url('Black_Dotted-removebg.png');
-            opacity: 0.6;
-            filter: invert(0.3) grayscale(1);
+            background-color: #2563eb; /* Rich deep blue */
+            -webkit-mask-image: url('Black_Dotted-removebg.png');
+            -webkit-mask-size: contain;
+            -webkit-mask-repeat: no-repeat;
+            -webkit-mask-position: center center;
+            mask-image: url('Black_Dotted-removebg.png');
+            mask-size: contain;
+            mask-repeat: no-repeat;
+            mask-position: center center;
+            opacity: 0.85;
         }
 
         /* Yellow dotted file on top */
         .yellow-layer {
             background-image: url('Yellow_Dotted-removebg.png');
-            opacity: 0.7;
+            opacity: 0.8;
             filter: saturate(220%);
         }
 
