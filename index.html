@@ -22,7 +22,7 @@
             z-index: 1;
         }
 
-        /* Rings locked in place, spinning faster from their center */
+        /* Locked in place, spinning fast on their center axis */
         .ring {
             position: absolute;
             width: 120px;
@@ -30,26 +30,26 @@
             background-image: url('Yellow_Dotted-removebg.png');
             background-size: contain;
             background-repeat: no-repeat;
-            opacity: 0.75;
-            transform-origin: center center;
+            opacity: 0.8;
+            transform-origin: 50% 50%;
             will-change: transform;
         }
 
-        /* Faster rotation speeds (lower seconds = faster spin) */
-        .ring-1 { top: 15%; left: 10%; animation: spinCW 7s linear infinite; }
-        .ring-2 { top: 70%; left: 15%; animation: spinCCW 6s linear infinite; }
-        .ring-3 { top: 20%; left: 75%; animation: spinCW 8s linear infinite; }
-        .ring-4 { top: 75%; left: 80%; animation: spinCCW 6.5s linear infinite; }
-        .ring-5 { top: 45%; left: 48%; animation: spinCW 9s linear infinite; }
+        /* Much faster spin speeds (lower seconds = faster) */
+        .ring-1 { top: 15%; left: 10%; animation: spinCW 3s linear infinite; }
+        .ring-2 { top: 70%; left: 15%; animation: spinCCW 2.5s linear infinite; }
+        .ring-3 { top: 20%; left: 75%; animation: spinCW 3.5s linear infinite; }
+        .ring-4 { top: 75%; left: 80%; animation: spinCCW 2.8s linear infinite; }
+        .ring-5 { top: 45%; left: 48%; animation: spinCW 4s linear infinite; }
 
         @keyframes spinCW {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
         }
 
         @keyframes spinCCW {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(-360deg); }
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(-360deg); }
         }
 
         /* Subtle grey shapes */
