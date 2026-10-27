@@ -22,7 +22,7 @@
             z-index: 1;
         }
 
-        /* Using your exact uploaded file with zero positional drift */
+        /* Your exact uploaded file: centered and locked with zero drift */
         .ring {
             position: absolute;
             width: 120px;
@@ -31,12 +31,12 @@
             background-size: contain;
             background-repeat: no-repeat;
             background-position: center center;
-            opacity: 0.85;
+            opacity: 0.9;
             transform-origin: center center;
             will-change: transform;
         }
 
-        /* Locked-in positions with fast spin speeds */
+        /* Fast, stationary in-place spin speeds */
         .ring-1 { top: 15%; left: 10%; animation: spinCW 2.5s linear infinite; }
         .ring-2 { top: 70%; left: 15%; animation: spinCCW 2.2s linear infinite; }
         .ring-3 { top: 20%; left: 75%; animation: spinCW 2.8s linear infinite; }
