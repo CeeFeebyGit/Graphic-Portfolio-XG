@@ -22,17 +22,17 @@
             z-index: 1;
         }
 
-        /* 241.2px size, boosted saturation, slightly transparent, zero drift */
+        /* 237.6px size, high saturation, slightly transparent, zero drift */
         .ring {
             position: absolute;
-            width: 241.2px;
-            height: 241.2px;
+            width: 237.6px;
+            height: 237.6px;
             background-image: url('Yellow_Dotted-removebg.png');
             background-size: contain;
             background-repeat: no-repeat;
             background-position: center center;
             opacity: 0.7;
-            filter: saturate(220%);
+            filter: saturate(250%);
             transform-origin: center center;
             will-change: transform;
         }
@@ -99,7 +99,7 @@
 <body>
 
     <div class="bg-layer">
-        <!-- Rings with updated size, saturation, and transparency -->
+        <!-- Rings set to 237.6px with high saturation and transparency -->
         <div class="ring ring-1"></div>
         <div class="ring ring-2"></div>
         <div class="ring ring-3"></div>
