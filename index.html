@@ -5,7 +5,7 @@
     <title>Graphic Portfolio XG</title>
     <style>
         body {
-            background-color: #000000; /* Pitch black */
+            background-color: #000000;
             margin: 0;
             height: 100vh;
             overflow: hidden;
@@ -22,7 +22,7 @@
             z-index: 1;
         }
 
-        /* Your yellow dotted ring file */
+        /* Rings locked in place, spinning faster from their center */
         .ring {
             position: absolute;
             width: 120px;
@@ -30,15 +30,17 @@
             background-image: url('Yellow_Dotted-removebg.png');
             background-size: contain;
             background-repeat: no-repeat;
-            opacity: 0.7;
+            opacity: 0.75;
+            transform-origin: center center;
             will-change: transform;
         }
 
-        .ring-1 { top: 15%; left: 10%; animation: spinCW 15s linear infinite; }
-        .ring-2 { top: 70%; left: 15%; animation: spinCCW 12s linear infinite; }
-        .ring-3 { top: 20%; left: 75%; animation: spinCW 18s linear infinite; }
-        .ring-4 { top: 75%; left: 80%; animation: spinCCW 14s linear infinite; }
-        .ring-5 { top: 45%; left: 48%; animation: spinCW 20s linear infinite; }
+        /* Faster rotation speeds (lower seconds = faster spin) */
+        .ring-1 { top: 15%; left: 10%; animation: spinCW 7s linear infinite; }
+        .ring-2 { top: 70%; left: 15%; animation: spinCCW 6s linear infinite; }
+        .ring-3 { top: 20%; left: 75%; animation: spinCW 8s linear infinite; }
+        .ring-4 { top: 75%; left: 80%; animation: spinCCW 6.5s linear infinite; }
+        .ring-5 { top: 45%; left: 48%; animation: spinCW 9s linear infinite; }
 
         @keyframes spinCW {
             from { transform: rotate(0deg); }
