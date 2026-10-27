@@ -43,11 +43,12 @@
             background-position: center center;
         }
 
-        /* Black dotted file acting as the spinning shadow */
+        /* Black dotted file turned visible as an offset shadow */
         .shadow-layer {
             background-image: url('Black_Dotted-removebg.png');
-            opacity: 0.8;
-            transform: translate(8px, 8px);
+            opacity: 0.4;
+            transform: translate(6px, 6px);
+            filter: brightness(0) invert(1); /* Converts black dots to white so they show on the black background */
         }
 
         /* Yellow dotted file on top */
