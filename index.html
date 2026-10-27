@@ -22,19 +22,39 @@
             z-index: 1;
         }
 
-        /* Reverted to original 120px size, saturated, slightly transparent, zero drift */
-        .ring {
+        /* Synchronized ring container (241.2px, zero drift) */
+        .ring-wrapper {
             position: absolute;
-            width: 120px;
-            height: 120px;
-            background-image: url('Yellow_Dotted-removebg.png');
+            width: 241.2px;
+            height: 241.2px;
+            transform-origin: center center;
+            will-change: transform;
+        }
+
+        /* Shared layer styles for both images */
+        .ring-layer {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
             background-size: contain;
             background-repeat: no-repeat;
             background-position: center center;
+        }
+
+        /* Black dotted file acting as the spinning shadow */
+        .shadow-layer {
+            background-image: url('Black_Dotted-removebg.png');
+            opacity: 0.8;
+            transform: translate(8px, 8px);
+        }
+
+        /* Yellow dotted file on top */
+        .yellow-layer {
+            background-image: url('Yellow_Dotted-removebg.png');
             opacity: 0.7;
             filter: saturate(220%);
-            transform-origin: center center;
-            will-change: transform;
         }
 
         /* Left-side rings (normal rotation) */
@@ -99,12 +119,31 @@
 <body>
 
     <div class="bg-layer">
-        <!-- Reverted to 120px rings with mirroring, saturation, and transparency -->
-        <div class="ring ring-1"></div>
-        <div class="ring ring-2"></div>
-        <div class="ring ring-3"></div>
-        <div class="ring ring-4"></div>
-        <div class="ring ring-5"></div>
+        <!-- Ring 1 -->
+        <div class="ring-wrapper ring-1">
+            <div class="ring-layer shadow-layer"></div>
+            <div class="ring-layer yellow-layer"></div>
+        </div>
+        <!-- Ring 2 -->
+        <div class="ring-wrapper ring-2">
+            <div class="ring-layer shadow-layer"></div>
+            <div class="ring-layer yellow-layer"></div>
+        </div>
+        <!-- Ring 3 -->
+        <div class="ring-wrapper ring-3">
+            <div class="ring-layer shadow-layer"></div>
+            <div class="ring-layer yellow-layer"></div>
+        </div>
+        <!-- Ring 4 -->
+        <div class="ring-wrapper ring-4">
+            <div class="ring-layer shadow-layer"></div>
+            <div class="ring-layer yellow-layer"></div>
+        </div>
+        <!-- Ring 5 -->
+        <div class="ring-wrapper ring-5">
+            <div class="ring-layer shadow-layer"></div>
+            <div class="ring-layer yellow-layer"></div>
+        </div>
 
         <!-- Geometric shapes -->
         <div class="shape square s1"></div>
