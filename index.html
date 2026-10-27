@@ -1,16 +1,81 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Portfolio</title>
     <style>
         body {
-            background-color: #1a1a1a;
+            background-color: #0a0a0a; /* Way darker */
             margin: 0;
             height: 100vh;
+            overflow: hidden;
+            position: relative;
         }
+
+        /* Shape container */
+        .shapes-container {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        .shape {
+            position: absolute;
+            background-color: #1f1f1f; /* Subtle grey tone */
+            opacity: 0.6;
+        }
+
+        /* Squares */
+        .square {
+            width: 24px;
+            height: 24px;
+        }
+
+        /* Circles */
+        .circle {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+        }
+
+        /* Triangles */
+        .triangle {
+            width: 0;
+            height: 0;
+            background-color: transparent;
+            border-left: 12px solid transparent;
+            border-right: 12px solid transparent;
+            border-bottom: 24px solid #1f1f1f;
+        }
+
+        /* Random scattering placements */
+        .s1 { top: 15%; left: 10%; }
+        .s2 { top: 80%; left: 20%; border-bottom-color: #1f1f1f; }
+        .s3 { top: 35%; left: 85%; }
+        .s4 { top: 70%; left: 75%; }
+        .s5 { top: 20%; left: 50%; }
+        .s6 { top: 50%; left: 15%; }
+        .s7 { top: 85%; left: 45%; }
+        .s8 { top: 10%; left: 75%; }
+        .s9 { top: 55%; left: 90%; }
+        .s10 { top: 40%; left: 30%; }
     </style>
 </head>
 <body>
+
+    <div class="shapes-container">
+        <div class="shape square s1"></div>
+        <div class="shape circle s2"></div>
+        <div class="triangle s3"></div>
+        <div class="shape square s4"></div>
+        <div class="shape circle s5"></div>
+        <div class="triangle s6"></div>
+        <div class="shape square s7"></div>
+        <div class="shape circle s8"></div>
+        <div class="triangle s9"></div>
+        <div class="shape square s10"></div>
+    </div>
+
 </body>
 </html>
